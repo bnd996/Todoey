@@ -19,26 +19,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        let data = Data()
-        data.name = "Nurbek"
-        data.age = 36
-        
         do {
             let realm = try Realm()
             print(realm.configuration.fileURL)
-            try realm.write {
-                realm.add(data)
-            }
-            
         } catch {
             print("Error initialising realm \(error)")
         }
-        
-        
-        
-        
-        
-        
         
         return true
     }
